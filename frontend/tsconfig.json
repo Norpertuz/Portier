@@ -24,6 +24,11 @@
       "#components/*": ["./components/*"],
       "#data/*": ["./data/*"],
       "#layouts/*": ["./layouts/*"],
+      "#lang/*": ["./lang/*"],
+      "#pages/*": ["./app/[locale]/*"],
+      "#styles/*": ["./styles/*"],
+      "#svgs/*": ["./svgs/*"],
+      "#theme/*": ["./theme/*"],
       "#types/*": ["./types/*"],
       "#/*": ["./*"]
     }

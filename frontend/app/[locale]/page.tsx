@@ -1,12 +1,12 @@
 import { useTranslations } from 'next-intl';
 
 const Root = () => {
-  const t = useTranslations('Test');
+  const t = useTranslations('Label');
 
   return (
     <main>
       <h1 className="heading">
-        { t('title') }
+        { t('get-template') }
       </h1>
     </main>
   );

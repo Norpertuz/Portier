@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component initialize a component with default props 1`] = `
+<a
+  className="button"
+  data-testid="button"
+  href="/portfolio"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onTouchStart={[Function]}
+>
+  Initialize
+</a>
+`;
+
+exports[`Button Component renders the smaller button 1`] = `
+<a
+  className="button--sm"
+  data-testid="button"
+  href="/about-me"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onTouchStart={[Function]}
+>
+  Small Button
+</a>
+`;
+
+exports[`Button Component renders the standard button 1`] = `
+<a
+  className="button"
+  data-testid="button"
+  href="/"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onTouchStart={[Function]}
+>
+  Medium Button
+</a>
+`;

@@ -3,3 +3,5 @@ export interface Language {
     locale: string;
   }
 }
+
+export type Link = { [key in 'name' | 'url']: string; };
