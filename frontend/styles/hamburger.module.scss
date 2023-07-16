@@ -1,0 +1,50 @@
+@mixin ingredient {
+  @apply absolute bg-white h-0.5 rounded-[3px] w-full;
+}
+
+.hamburger {
+  @apply hidden px-[9px] py-[13px] rounded-lg transition-colors;
+
+  &:hover {
+    @apply bg-darkGunmetal;
+  }
+
+  &__ingredient {
+    @apply left-0 transition-colors;
+    @include ingredient;
+
+    &::after {
+      @apply top-[6px];
+    }
+
+    &::after, &::before {
+      @apply left-0 transition-transform ;
+      @include ingredient;
+      content: '';
+    }
+
+    &::before {
+      @apply top-[-6px];
+    }
+  }
+
+  &__wrapper {
+    @apply block w-[26px] relative;
+  }
+
+  &--active {
+    @apply bg-transparent;
+
+    &::after {
+      @apply -translate-y-1.5 -rotate-45;
+    }
+
+    &::before {
+      @apply translate-y-1.5 rotate-45;
+    }
+  }
+
+  @screen md {
+    @apply block;
+  }
+}
