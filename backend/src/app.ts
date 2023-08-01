@@ -1,4 +1,4 @@
-import { getSchemaInformation } from 'sanitySchemaFetcher/introductionSectionFetcher';
+import { getSchemaInformation } from 'SchemaFetcher';
 import express from 'express';
 import { env } from './constants/env';
 
