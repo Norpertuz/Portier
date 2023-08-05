@@ -10,7 +10,8 @@ export interface SanityContent {
     children: SanityElement[],
 }
 export interface SanityResult {
-    content: SanityContent[],
+    content: string,
+    title: SanityContent[],
 }
 
 export interface SanityApiResponse {
