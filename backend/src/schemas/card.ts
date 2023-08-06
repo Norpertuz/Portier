@@ -1,4 +1,4 @@
-import { getExtension, getImageDimensions } from '@sanity/asset-utils';
+import { getExtension } from '@sanity/asset-utils';
 
 export const card = {
   name: 'card',
@@ -7,17 +7,17 @@ export const card = {
   fields: [
     {
       name: 'title',
-      title: 'Card Title',
+      title: 'Title',
       type: 'string',
     },
     {
       name: 'content',
-      title: 'Card content',
+      title: 'Content',
       type: 'text',
     },
     {
       name: 'image',
-      title: 'Your Image',
+      title: 'Image',
       type: 'image',
       validation: (rule: any) => rule.custom((value: any) => {
         if (!value) {
@@ -26,12 +26,6 @@ export const card = {
         const filetype = getExtension(value.asset._ref);
         if (filetype !== 'svg') {
           return 'Only .svg images are allowed';
-        }
-
-        const { width, height } = getImageDimensions(value.asset._ref);
-
-        if (width < 64 || height < 64) {
-          return 'Image must be at least 64x64 pixels';
         }
 
         return true;
@@ -45,16 +39,3 @@ export const card = {
     },
   ],
 };
-
-export interface CardType {
-  title: string;
-  content: string;
-  image: {
-    _type: 'image';
-    asset: {
-      _ref: string;
-      _type: 'reference';
-    };
-  };
-  altText: string;
-}

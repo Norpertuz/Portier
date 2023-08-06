@@ -1,4 +1,5 @@
-import { card, CardType } from './card';
+import { card } from './card';
+import { CardType } from '../types/card';
 
 export const introduction = {
   name: 'introduction',

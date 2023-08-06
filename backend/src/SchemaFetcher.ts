@@ -1,20 +1,20 @@
 import { SanityApiResponse, SanityElement } from 'types/sanity';
-import { makeApiRequest } from './axiosClient';
+import { AxiosResponse } from 'axios';
+import { apiClient } from './axiosClient';
 
-export async function getSchemaInformation(): Promise<string> {
-  let tagedString: string = '';
+export async function getContentFromSchema(): Promise<string> {
+  let content: string = '';
   try {
-    const response = await makeApiRequest<SanityApiResponse>('', {
-      query: '*[_type =="introduction"]',
+    const response: AxiosResponse<SanityApiResponse> = await apiClient.get('', {
+      params: { query: '*[_type =="introduction"]' },
     });
-
     if (response.status === 200 && response.data.result) {
       const responsedChildren : SanityElement[] = response.data.result[0].title[0].children;
-      tagedString = responsedChildren
+      content = responsedChildren
         .map((child) => (child.marks?.[0] ? `<strong>${child.text}</strong>` : child.text))
         .join('');
     } else {
-      console.error('Błąd podczas pobierania schematu');
+      console.error('Error during schema download process');
     }
   } catch (error) {
     if (error instanceof Error) {
@@ -23,5 +23,5 @@ export async function getSchemaInformation(): Promise<string> {
       console.log('Unexpected error', error);
     }
   }
-  return tagedString;
+  return content;
 }
