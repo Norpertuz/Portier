@@ -1,0 +1,22 @@
+.logo {
+  @apply flex gap-2 items-center;
+
+  &__logomark {
+    path {
+      @apply fill-white;
+    }
+
+    @screen md {
+      @apply max-h-[38px] max-w-[38px];
+    }
+  }
+
+  &__logotype {
+    @apply font-bold text-[27px] text-white;
+    line-height: normal;
+
+    @screen md {
+      @apply text-[22px];
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.navigation {
+  &__link {
+    @apply text-button--sm text-philippineGray transition-colors;
+
+    &:hover {
+      @apply text-white;
+    }
+  }
+
+  &__list {
+    @apply flex gap-10;
+  }
+}

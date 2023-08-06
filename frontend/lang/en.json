@@ -1,0 +1,13 @@
+{
+  "Common": {
+    "company-name": "Portier",
+    "navigationItems": {
+      "about-me": "About Me",
+      "blog": "Blog",
+      "portfolio": "Portfolio"
+    }
+  },
+  "Label": {
+    "get-template": "Get Template"
+  }
+}
