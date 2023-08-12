@@ -28,6 +28,7 @@
     "no-plusplus": "warn",
     "no-console" : "warn",
     "@typescript-eslint/no-explicit-any": "warn",
-    "no-underscore-dangle": "warn"
+    "no-underscore-dangle": "warn",
+    "max-len": "off"
   }
 }
